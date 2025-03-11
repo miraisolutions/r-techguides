@@ -8,7 +8,7 @@ You can install roxygenExPkg from GitHub with:
 
 ``` r
 remotes::install_github(
-  "miraisolutions/techguides/roxygen-guidelines/roxygenExPkg"
+  "miraisolutions/r-techguides/roxygen-guidelines/roxygenExPkg"
 )
 ```
 

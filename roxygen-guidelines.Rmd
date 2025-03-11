@@ -224,7 +224,7 @@ The following examples make use of the demo package `roxygenExPkg`. The package 
 
 ```{r github-install, eval = FALSE}
 remotes::install_github(
-  "miraisolutions/techguides/roxygen-guidelines/roxygenExPkg"
+  "miraisolutions/r-techguides/roxygen-guidelines/roxygenExPkg"
 )
 ```
 
