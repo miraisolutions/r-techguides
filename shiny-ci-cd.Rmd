@@ -120,7 +120,7 @@ In order to setup and use CI/CD GitHub Actions workflows as described above, you
 
 ```{r}
 usethis::use_github_action(url = paste0(
-  "https://github.com/miraisolutions/techguides/blob/master/",
+  "https://github.com/miraisolutions/r-techguides/blob/master/",
   "shiny-ci-cd/actions/ci-cd.yml"
   # "shiny-ci-cd/actions/ci-cd-renv.yml"
   # "shiny-ci-cd/actions/ci.yml"

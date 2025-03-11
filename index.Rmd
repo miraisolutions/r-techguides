@@ -3,7 +3,7 @@ title: "Technical Guidelines for R"
 author: "Mirai Solutions"
 date: "`r Sys.time()`"
 description: "Best practices with R around select topics."
-github-repo: "miraisolutions/techguides"
+github-repo: "miraisolutions/r-techguides"
 site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
