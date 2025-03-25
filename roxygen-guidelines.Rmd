@@ -20,8 +20,8 @@ This is based on:
 
 - **roxygen2** vignettes: `browseVignettes("roxygen2")`, in particular
 [Generating Rd
-files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html).
-- The [tidyverse style guide](https://style.tidyverse.org/documentation.html).
+files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html){target="_blank"}.
+- The [tidyverse style guide](https://style.tidyverse.org/documentation.html){target="_blank"}.
 - Package development experience.
 
 Examples are provided to show the concrete application of the described
@@ -94,7 +94,7 @@ bottom and in this order.
     - For **un-exported** objects documented for internal purposes, specify
     `@keywords internal` instead of `@export`.
 - Use
-[**markdown**](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd-formatting.html):
+[**markdown**](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd-formatting.html){target="_blank"}:
 If not done at package level, `@md` should be the last element (so it can easily
 be removed when moving to package-level).
 - Do not use `@rdname` if not documenting multiple objects (see below).
@@ -135,7 +135,7 @@ Several techniques and tools are available to enable and support a more
 consistent and maintainable documentation.
 
 This can be described in detail in the [Do repeat
-yourself](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html#do-repeat-yourself)
+yourself](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html#do-repeat-yourself){target="_blank"}
 section of vignette _Generating Rd files_, and are summarized as follows
 
 - Cross-link documentation files with `@seealso` and `@family`.
@@ -174,7 +174,7 @@ man-roxygen/ex-<FUNCTION_NAME>.R`.
 
 Tags `@rdname` and `@describeIn` are a convenient way to document multiple
 functions in the same file. See the roxygen2 vignette [Generating Rd
-files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html)
+files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html){target="_blank"}
 (`vignette("rd", package = "roxygen2")`) for more detail.
 
 In both case, not that `@title` should be specified only for the _main_
