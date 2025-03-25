@@ -8,11 +8,8 @@ site: bookdown::bookdown_site
 output:
   bookdown::gitbook:
     css: styles.css
-    includes:
-      in_header: target-blank.html
-    pandoc_args: ["--number-offset=0"]
-    # disable alt text rendered as figure caption
     split_by: section
+    # disable alt text rendered as figure caption
     fig_caption: false
     config:
       sharing:
