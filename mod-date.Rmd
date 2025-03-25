@@ -1,3 +1,7 @@
-```{bash mod-date, engine.opts='-l', echo=FALSE}
-printf "Last modified: %s" "$(git log -1 --format=%cd $(cat tg-temp.txt) | sed 's/^[^ ]* //;s/ [^ ]*$//')"
+```{r set-mod-date, eval=TRUE, include=FALSE}
+Sys.setenv(KNITR_CURRENT_INPUT = knitr_current_input)
+```
+
+```{bash mood-date, engine.opts='-l', eval=TRUE, echo=FALSE, comment="", message=FALSE}
+printf "Last modified: %s" "$(git log -1 --format=%cd $KNITR_CURRENT_INPUT | sed 's/^[^ ]* //;s/ [^ ]*$//')"
 ```
