@@ -89,17 +89,21 @@ Continuous deployment to shinyapps.io is automated upon any push to the `main` (
 
 ### Workflow file
 
-```{r read-ci-cd.yml, eval = TRUE, include = FALSE}
+```{r read-workflow-files, eval = TRUE, include = FALSE}
+# copy the workflow files so they are included in the rendered book site
 file.copy("shiny-ci-cd", "_book", recursive = TRUE)
-knitr::read_chunk("shiny-ci-cd/actions/ci-cd.yml", labels = "ci-cd.yml")
-knitr::read_chunk("shiny-ci-cd/actions/ci-cd-renv.yml", labels = "ci-cd-renv.yml")
-knitr::read_chunk("shiny-ci-cd/actions/ci.yml", labels = "ci.yml")
-knitr::read_chunk("shiny-ci-cd/actions/ci-renv.yml", labels = "ci-renv.yml")
+# read the workflow files so we can display their content as needed
+# (see https://stackoverflow.com/a/67815701)
+workflows_content <- sapply(
+  c("ci-cd.yml", "ci-cd-renv.yml", "ci.yml", "ci-renv.yml"),
+  function(f) xfun::file_string(file.path("shiny-ci-cd/actions", f))
+)
 ```
 
 The `steps` described in the previous section are defined in the `.yml` workflow file as follows:
 
-```{yml ci-cd.yml}
+```yaml
+`r workflows_content["ci-cd.yml"]`
 ```
 
 As visible from the run logs that can be found in the GitHub repository under the `Actions` tab, all the CI/CD pipeline steps are performed subsequently, and are identifiable by the `name` field. See the example below, showing how the deployment step is skipped for a run not triggered by a push action the `main` (or `master`) branch:
@@ -127,25 +131,29 @@ usethis::use_github_actions_badge("ci-cd.yml") # or "ci.yml"/"ci(-cd)-renv.yml"
 
 <details>
 <summary><code>shiny-ci-cd/actions/ci-cd.yml</code></summary>
-```{yml ci-cd.yml}
+```yaml
+`r workflows_content["ci-cd.yml"]`
 ```
 </details>
 
 <details>
 <summary><code>shiny-ci-cd/actions/ci-cd-renv.yml</code></summary>
-```{yml ci-cd-renv.yml}
+```yaml
+`r workflows_content["ci-cd-renv.yml"]`
 ```
 </details>
 
 <details>
 <summary><code>shiny-ci-cd/actions/ci.yml</code></summary>
-```{yml ci.yml}
+```yaml
+`r workflows_content["ci.yml"]`
 ```
 </details>
 
 <details>
 <summary><code>shiny-ci-cd/actions/ci-renv.yml</code></summary>
-```{yml ci-renv.yml}
+```yaml
+`r workflows_content["ci-renv.yml"]`
 ```
 </details>
 
@@ -219,7 +227,8 @@ It is in fact more convenient to write an R script, saved as e.g. `deploy/deploy
 ```
 
 and then simply execute it as `deploy` `script`:
-```yml
+
+```yaml
 deploy:
   provider: script
   skip_cleanup: true # strictly necessary only for the renv case
