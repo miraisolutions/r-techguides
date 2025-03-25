@@ -185,8 +185,8 @@ As default, Travis CI takes care of package dependency installation and performs
 
 ### Using renv for your project
 
-If your project relies on the package [renv](https://rstudio.github.io/renv/){target="_blank"} for tracking dependencies via an `renv.lock` file, you should override the default `install`ation package dependencies and make sure `cache`ing is adjusted accordingly, as described in the [Using renv with Continuous Integration](https://rstudio.github.io/renv/articles/ci.html
-) vignette:
+If your project relies on the package [renv](https://rstudio.github.io/renv/){target="_blank"} for tracking dependencies via an `renv.lock` file, you should override the default `install`ation package dependencies and make sure `cache`ing is adjusted accordingly, as described in the [Using renv with Continuous Integration](https://rstudio.github.io/renv/articles/ci.html){target="_blank"} vignette:
+
 ```yaml
 cache:
   directories:
