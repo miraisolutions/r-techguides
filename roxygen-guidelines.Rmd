@@ -27,7 +27,7 @@ This is based on:
 - **roxygen2** vignettes: `browseVignettes("roxygen2")`, in particular
 [Generating Rd
 files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html).
-- The [tidyverse style guide](https://style.tidyverse.org/documentation.html).
+- The [tidyverse style guide](https://style.tidyverse.org/documentation.html){target="_blank"}.
 - Package development experience.
 
 Examples are provided to show the concrete application of the described
@@ -100,7 +100,7 @@ bottom and in this order.
     - For **un-exported** objects documented for internal purposes, specify
     `@keywords internal` instead of `@export`.
 - Use
-[**markdown**](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd-formatting.html):
+[**markdown**](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd-formatting.html){target="_blank"}:
 If not done at package level, `@md` should be the last element (so it can easily
 be removed when moving to package-level).
 - Do not use `@rdname` if not documenting multiple objects (see below).

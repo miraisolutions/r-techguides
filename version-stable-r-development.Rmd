@@ -25,13 +25,13 @@ the development setup to (alternative) target productive stages.
 
 This guide illustrates an approach to manage a version-stable R development
 environment based on containerized solutions leveraging the
-[Rocker project](https://www.rocker-project.org/), allowing the coexistence
+[Rocker project](https://www.rocker-project.org/){target="_blank"}, allowing the coexistence
 of multiple dockerized development flavors, to match various target production
 environments or projects.
 
 > _The instructions in this chapter are for R >= 4.0.0.
 Images for R <= 3.6.3 are defined in 
-[rocker-org/rocker-versioned](https://github.com/rocker-org/rocker-versioned),
+[rocker-org/rocker-versioned](https://github.com/rocker-org/rocker-versioned){target="_blank"},
 but are no longer actively maintained._
 
 
@@ -40,8 +40,8 @@ but are no longer actively maintained._
 When deploying R applications (e.g. a Shiny app) using Docker containers, it is
 important to control versioning of R and packages for the sake of reproducibility
 and stability of the deployments. For this reason,
-[version-stable](https://github.com/rocker-org/rocker-versioned2) images are
-provided as part of the [Rocker project](https://www.rocker-project.org/) and
+[version-stable](https://github.com/rocker-org/rocker-versioned2){target="_blank"} images are
+provided as part of the [Rocker project](https://www.rocker-project.org/){target="_blank"} and
 used as a basis for deploying productive applications.
 
 Each version-stable Rocker image has an associated _tag_ for all non-latest R
@@ -49,7 +49,7 @@ versions (e.g. `rocker/r-ver:4.4.1`). Besides being specific to the
 corresponding version of R, each tag fixes the version of contributed packages
 (by using as package repository the CRAN snapshot of the last day CRAN
 distributed that R version as latest release). See
-[wiki/Versions](https://github.com/rocker-org/rocker-versioned2/wiki/Versions).
+[wiki/Versions](https://github.com/rocker-org/rocker-versioned2/wiki/Versions){target="_blank"}.
 If that R version is the latest, the CRAN date will not be set and the latest packages will always be installed.
 
 
@@ -59,7 +59,7 @@ image tag to start `FROM`, e.g.
 FROM rocker/r-ver:4.4.1
 ```
 See
-[SmaRP/Dockerfile](https://github.com/miraisolutions/SmaRP/blob/feature/upgrade-latest-r/Dockerfile)
+[SmaRP/Dockerfile](https://github.com/miraisolutions/SmaRP/blob/feature/upgrade-latest-r/Dockerfile){target="_blank"}
 for an example.
 <!-- NOTE: Not yet merged into master, to be replaced with https://github.com/miraisolutions/SmaRP/blob/master/Dockerfile -->
 
@@ -105,7 +105,7 @@ following setup:
 - Use a version-specific port, e.g. `4000` for R 4.0.0, `4410` for R 4.4.1 and
 so on, so that we can use `localhost` for concurrent R version instances. 
 We bind the port to localhost (`127.0.0.1:4410`), so it is only accessible locally 
-(see [the Rocker reference](https://rocker-project.org/images/versioned/rstudio.html#disable_auth)).
+(see [the Rocker reference](https://rocker-project.org/images/versioned/rstudio.html#disable_auth){target="_blank"}).
 - The development code of all relevant projects should live outside the
 container and be shared with it (and possibly multiple other containers), e.g. under
 `~/workspace` on the host machine and `/home/rstudio/workspace` in
@@ -118,7 +118,7 @@ the container.
 (e.g. after pulling a new `rocker` image), we also use a shared volume (like
 `~/.rstudio-config/4.4.1`) for the `/home/rstudio/.config/rstudio` directory, which is
 version-specific in case of multiple R versions.
-- If we want to use Meld via the [compareWith](https://github.com/miraisolutions/compareWith/) addins, we need to
+- If we want to use Meld via the [compareWith](https://github.com/miraisolutions/compareWith/){target="_blank"} addins, we need to
     - map the `DISPLAY` environment variable and volume `/tmp/.X11-unix`,
     - add `DISPLAY` to `Renviron`,
     - install Meld,
@@ -222,14 +222,14 @@ Because of this, RStudio does not set the desired home directory as the initial 
 echo '{ "initial_working_directory": "/home/rstudio" }' > $HOME/.rstudio-config/$R_VER/rstudio-prefs.json &&
 ```
 After `mkdir -p $HOME/.rstudio-config/$R_VER` in the `run_rstudio_ver` function.
-If you run into issues, the discussion in this rocker [pull request](https://github.com/rocker-org/rocker-versioned2/pull/636)
+If you run into issues, the discussion in this rocker [pull request](https://github.com/rocker-org/rocker-versioned2/pull/636){target="_blank"}
 about rootless container support may help.
 
 ### Best-supported R versions
-This tutorial uses images based on the [rocker-versioned2](https://github.com/rocker-org/rocker-versioned2) repository.
+This tutorial uses images based on the [rocker-versioned2](https://github.com/rocker-org/rocker-versioned2){target="_blank"} repository.
 We recommend using the latest patch version for each minor version - e.g. 4.0.5 for 4.0.x,
 as these seem to be the most regularly updated images
-(see e.g. [rocker/verse on docker hub](https://hub.docker.com/r/rocker/verse/tags?page=&page_size=&ordering=&name=4.0.)).
+(see e.g. [rocker/verse on docker hub](https://hub.docker.com/r/rocker/verse/tags?page=&page_size=&ordering=&name=4.0.){target="_blank"}).
 
 
 ### Cleanup
@@ -241,8 +241,8 @@ docker rm $(docker stop rstudio_4.4.1)
 
 ## References
 
-- [The Rocker Project](https://www.rocker-project.org/)
-- [Shared Volumes](https://www.rocker-project.org/use/shared_volumes/)
-- [Rocker Wiki](https://github.com/rocker-org/rocker/wiki)
-- [Sharing files with host machine](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine)
-- [Rocker reference for verse and other images](https://rocker-project.org/images/versioned/rstudio.html) (in particular [how to use](https://rocker-project.org/images/versioned/rstudio.html#how-to-use))
+- [The Rocker Project](https://www.rocker-project.org/){target="_blank"}
+- [Shared Volumes](https://www.rocker-project.org/use/shared_volumes/){target="_blank"}
+- [Rocker Wiki](https://github.com/rocker-org/rocker/wiki){target="_blank"}
+- [Sharing files with host machine](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine){target="_blank"}
+- [Rocker reference for verse and other images](https://rocker-project.org/images/versioned/rstudio.html){target="_blank"} (in particular [how to use](https://rocker-project.org/images/versioned/rstudio.html#how-to-use){target="_blank"})

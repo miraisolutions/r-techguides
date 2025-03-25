@@ -16,7 +16,7 @@ unlink("tg-temp.txt")
 ```
 
 MS Excel is probably the most used support to share data analysis and reports in enterprise. Despite its popularity, performing data analysis within an Excel workbook can be cumbersome as well as error prone due to irreproducibility. A possible way out is to perform most of the steps of your data analysis and reporting in another programming language, such as R, and just present and share the results in Excel. 
-Using the package [`XLConnect`](https://github.com/miraisolutions/xlconnect) will allow you to read, write and manipulate MS Excel files from within R.
+Using the package [`XLConnect`](https://github.com/miraisolutions/xlconnect){target="_blank"} will allow you to read, write and manipulate MS Excel files from within R.
 
 XLConnect's main features:
 

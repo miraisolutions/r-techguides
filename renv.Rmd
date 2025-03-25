@@ -15,7 +15,7 @@ cat(knitr::current_input(), file="tg-temp.txt")
 unlink("tg-temp.txt")
 ```
 
-For production readiness --- and project safety --- it is important to control the dependencies of a piece of development. This can be done at project level using the package [`renv`](https://rstudio.github.io/renv/).
+For production readiness --- and project safety --- it is important to control the dependencies of a piece of development. This can be done at project level using the package [`renv`](https://rstudio.github.io/renv/){target="_blank"}.
 
 In an `renv` project, dependencies are resolved and tracked in a lock-file. As a new R session starts, `renv` detects whether installed dependencies are out of sync compared to the lock-file, ensuring the same virtual environment applies each time the project is opened.
 
@@ -33,7 +33,7 @@ install.packages("renv")
 
 ## Set-up an `renv` project
 
-In order resolve and track dependencies of a project, `renv` needs to discover what the required packages are. Although `renv` supports discovering dependencies by scanning all files in the project (_implicit mode_), we strongly advise to define the required dependencies in a `DESCRIPTION` file, and rely on `renv`'s _explicit mode_ (see ['Snapshot types'](https://rstudio.github.io/renv/reference/snapshot.html#snapshot-types) in the documentation for details).
+In order resolve and track dependencies of a project, `renv` needs to discover what the required packages are. Although `renv` supports discovering dependencies by scanning all files in the project (_implicit mode_), we strongly advise to define the required dependencies in a `DESCRIPTION` file, and rely on `renv`'s _explicit mode_ (see ['Snapshot types'](https://rstudio.github.io/renv/reference/snapshot.html#snapshot-types){target="_blank"} in the documentation for details).
 
 To initialize `renv` for a project where dependencies are explicitly stated in the `DESCRIPTION` file, run:
 
@@ -99,7 +99,7 @@ If the `DESCRIPTION` file does not request a specific package version, `renv` wi
 options(repos = "https://packagemanager.posit.co/cran/2024-01-02")
 ```
 
-Date-based CRAN snapshots have built-in support in `renv` with [`renv::checkout()`](https://rstudio.github.io/renv/reference/checkout.html), w/o the need for `(options(repos = ...))`:
+Date-based CRAN snapshots have built-in support in `renv` with [`renv::checkout()`](https://rstudio.github.io/renv/reference/checkout.html){target="_blank"}, w/o the need for `(options(repos = ...))`:
 
 ```{r , echo = TRUE, eval = FALSE}
 # check out packages from PPM using the date '2023-01-02'

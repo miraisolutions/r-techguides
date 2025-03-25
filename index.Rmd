@@ -27,7 +27,7 @@ output:
 printf "Last modified: %s" "$(git log -1 --format=%cd index.Rmd | sed 's/^[^ ]* //;s/ [^ ]*$//')"
 ```
 
-[**Mirai Solutions**](https://mirai-solutions.ch/) is a Zurich-based software development and consultancy firm, delivering cutting-edge technology and best practices to the industry, helping companies elevate their data analytics and operations.
+[**Mirai Solutions**](https://mirai-solutions.ch/){target="_blank"} is a Zurich-based software development and consultancy firm, delivering cutting-edge technology and best practices to the industry, helping companies elevate their data analytics and operations.
 
 We are an interdisciplinary team of data scientists, software engineers, business consultants and IT architects with specialist knowledge ranging from finance and risk management to math/stats techniques to software development and project management.
 
@@ -45,4 +45,4 @@ In this e-book, we share technical guidelines, how-tos and best practices around
 
 ![Python Logo](python-logo-only.png)
 
-If instead you are more interested in **Python**, you can access our free Python training material [**here**](https://mirai-solutions.ch/py-techguides).
+If instead you are more interested in **Python**, you can access our free Python training material [**here**](https://mirai-solutions.ch/py-techguides){target="_blank"}.
