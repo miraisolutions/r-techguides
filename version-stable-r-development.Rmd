@@ -5,15 +5,9 @@
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, eval = FALSE)
 ```
 
-```{r topic-envvar, include = FALSE, eval=TRUE}
-cat(knitr::current_input(), file="tg-temp.txt")
-```
-
-```{r mod-date, child=c('mod-date.Rmd'), comment="", eval=TRUE}
-```
-
-```{r envvar-unlink, include = FALSE, eval=TRUE}
-unlink("tg-temp.txt")
+```{r mod-date, eval=TRUE, echo=FALSE, results='asis'}
+mod_date_envir <- list2env(list(knitr_current_input = knitr::current_input()))
+cat(knitr::knit_child("mod-date.Rmd", quiet = TRUE, envir = mod_date_envir))
 ```
 
 In the context of productive solutions, it is essential to have full control
