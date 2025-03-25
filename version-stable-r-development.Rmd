@@ -75,7 +75,7 @@ Linux systems), where only one R version (the latest release) exists.
 The idea is then to rely on the same version-stable rocker containers used for
 the deployments, using a containerized versioned RStudio instance for the local
 development. This is available through Rocker's [versioned
-stack](https://www.rocker-project.org/images/#the-versioned-stack), so we could
+stack](https://www.rocker-project.org/images/#the-versioned-stack){target="_blank"}, so we could
 use e.g. `rocker/rstudio:4.4.1`.
 
 Note that the same version-stable instance of RStudio can be used across all
@@ -111,7 +111,7 @@ container and be shared with it (and possibly multiple other containers), e.g. u
 `~/workspace` on the host machine and `/home/rstudio/workspace` in
 the container.
     - For this to work w/o [permission
-    issues](https://rocker-project.org/images/versioned/rstudio.html#userid-and-groupid),
+    issues](https://rocker-project.org/images/versioned/rstudio.html#userid-and-groupid){target="_blank"},
     the container user (`rstudio`) must match the UID of the host user (`$UID`). 
     This has the effect of setting the ownership of `~/workspace` on the host machine to `$UID` if it is not already owned by that user.
 - In order for the RStudio settings to persist if the container is recreated
