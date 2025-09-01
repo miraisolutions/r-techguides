@@ -51,7 +51,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Upload built site artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _book
 
