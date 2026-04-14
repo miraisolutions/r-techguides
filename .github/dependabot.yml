@@ -6,3 +6,10 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    # we group all github-actions updates, not only for reducing the amount of PRs,
+    # but also to make sure we capture multiple related updates that must come together
+    # (e.g. around artifacts and GH pages deployments)
+    groups:
+      actions:
+        patterns:
+        - "actions/*"
