@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -51,7 +51,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Upload built site artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _book
 
@@ -80,4 +80,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
